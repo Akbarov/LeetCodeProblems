@@ -1,4 +1,4 @@
-package algorithm_I
+package algorithm_I.day_6_two_pointers
 
 fun main() {
 
