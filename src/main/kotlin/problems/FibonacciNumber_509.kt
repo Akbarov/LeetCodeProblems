@@ -4,17 +4,17 @@ package problems
 Creator: Zohidjon Akbarov
  */
 fun main() {
-println(fib(2))
-println(fib(3))
-println(fib(25))
+    println(fib(1))
+    println(fib(2))
+    println(fib(3))
+    println(fib(25))
 }
 
-private fun fib(n: Int): Int {
-    return calFib(n,0,1)
-}
 
-private tailrec fun calFib(n: Int, fib1: Int, fib2: Int): Int {
-    if (n == 0) return fib1
-    if (n==1) return fib2
-    return calFib(n - 1, fib2, fib2 + fib1)
+private tailrec fun fib(n: Int, fib0: Int = 0, fib1: Int = 1): Int {
+    return when (n) {
+        0 -> fib0
+        1 -> fib1
+        else -> fib(n - 1, fib1, fib0 + fib1)
+    }
 }
