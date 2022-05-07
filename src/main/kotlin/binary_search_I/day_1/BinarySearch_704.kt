@@ -1,4 +1,4 @@
-package problems
+package binary_search_I.day_1
 
 /**
 Creator: Zohidjon Akbarov

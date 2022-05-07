@@ -23,5 +23,4 @@ private fun fizzBuzz(n: Int): List<String> {
         }
     }
     return list
-
 }

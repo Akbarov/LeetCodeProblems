@@ -21,7 +21,7 @@ fun main() {
 
 }
 
-lateinit var result: MutableList<MutableList<Int>>
+private lateinit var result: MutableList<MutableList<Int>>
 private fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
     result = mutableListOf()
     helper(candidates, target, mutableListOf(), 0)

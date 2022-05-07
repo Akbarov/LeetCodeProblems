@@ -4,9 +4,9 @@ package problems
 Creator: Zohidjon Akbarov
  */
 fun main() {
-println(lengthOfTheLastWord("Hello world"))
-println(lengthOfTheLastWord("   fly me   to   the moon  "))
-println(lengthOfTheLastWord("luffy is still joyboy"))
+    println(lengthOfTheLastWord("Hello world"))
+    println(lengthOfTheLastWord("   fly me   to   the moon  "))
+    println(lengthOfTheLastWord("luffy is still joyboy"))
 }
 
 private fun lengthOfTheLastWord(s: String): Int {
