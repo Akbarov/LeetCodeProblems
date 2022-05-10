@@ -43,7 +43,7 @@ private fun getLettersForDigit(char: Char): List<Char> {
             listOf('j', 'k', 'l')
         }
         '6' -> {
-            listOf('m', 'n', '0')
+            listOf('m', 'n', 'o')
         }
         '7' -> {
             listOf('p', 'q', 'r', 's')

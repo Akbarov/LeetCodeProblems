@@ -1,4 +1,3 @@
-package problems
 
 /**
 Creator: Zohidjon Akbarov
@@ -8,7 +7,7 @@ fun main() {
     array.sortDescending()
 }
 
-class Codec() {
+private class Codec() {
     // Encodes a URL to a shortened URL.
     val map = mutableMapOf<String, String>()
     fun encode(longUrl: String): String {
