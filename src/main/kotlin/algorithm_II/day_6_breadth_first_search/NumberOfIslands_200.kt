@@ -26,7 +26,7 @@ private fun numIslands(grid: Array<CharArray>): Int {
 }
 
 private fun bfs(grid: Array<CharArray>, i: Int, j: Int, isVisited: Array<BooleanArray>) {
-    if (i < 0 || j <= 0 || i >= grid.size || j >= grid[0].size || isVisited[i][j]) return
+    if (i < 0 || j < 0 || i >= grid.size || j >= grid[0].size || isVisited[i][j]) return
     isVisited[i][j] = true
     if (grid[i][j] == '1') {
         bfs(grid, i, j + 1, isVisited)
