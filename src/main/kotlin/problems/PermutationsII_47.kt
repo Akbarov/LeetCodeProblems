@@ -8,7 +8,7 @@ fun main() {
 //    for (row in list) {
 //        println(row.joinToString())
 //    }
-    var list = permuteUnique(intArrayOf(1, 2,3))
+    var list = permuteUnique(intArrayOf(1, 2, 3))
     for (row in list) {
         println(row.joinToString())
     }
