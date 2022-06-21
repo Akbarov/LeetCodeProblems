@@ -18,5 +18,5 @@ private fun lengthOfLongestSubstring(s: String): Int {
         result += c
 
     }
-    return if(maxLength>result.length)maxLength else result.length
+    return if (maxLength > result.length) maxLength else result.length
 }
