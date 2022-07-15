@@ -1,5 +1,8 @@
 package problems
 
+import java.util.*
+
+
 /**
 Creator: Zohidjon Akbarov
  */
@@ -8,11 +11,7 @@ fun main() {
 }
 
 private fun grayCode(n: Int): List<Int> {
-    val list = mutableListOf<Int>()
-
-    for (i in 0 until (n shl 1)) {
-        val temp = i xor i shr 1
-        list.add(temp)
-    }
-    return list
+    val result: MutableList<Int> = LinkedList()
+    for (i in 0 until (1 shl n)) result.add(i xor (i shr 1))
+    return result
 }

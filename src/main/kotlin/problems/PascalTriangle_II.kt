@@ -9,7 +9,7 @@ fun main() {
 
 }
 
-fun getRow(rowIndex: Int): List<Int> {
+private fun getRow(rowIndex: Int): List<Int> {
     val tempList = mutableListOf<Int>()
     var c = 1L
     for (k in 1..rowIndex + 1) {
