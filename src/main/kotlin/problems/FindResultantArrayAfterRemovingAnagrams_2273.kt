@@ -8,14 +8,16 @@ fun main() {
 }
 
 private fun removeAnagrams(words: Array<String>): List<String> {
-    val set = mutableSetOf<Int>()
+    val result = mutableListOf<String>()
     for (i in words.indices) {
-        if (i in set) continue
-
+        if (words[i] == "*") continue
+        result.add(words[i])
+        val sorted = words[i].toCharArray().sorted().joinToString("")
         for (j in i + 1 until words.size) {
-            if (j in set) continue
-
+            if (sorted == words[j].toCharArray().sorted().joinToString("")) {
+                words[i] = "*"
+            }
         }
     }
-    return emptyList()
+    return result
 }

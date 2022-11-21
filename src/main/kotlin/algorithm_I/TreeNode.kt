@@ -8,8 +8,7 @@ class TreeNode(var `val`: Int) {
 object Generate {
     fun generateTreeNode(list: List<Int?>): TreeNode? {
         if (list.isEmpty()) return null
-        val root = TreeNode(list.first() ?: 0)
-        return root
+        return TreeNode(list.first() ?: 0)
     }
 
     private fun bfs(root: TreeNode, list: List<Int?>, count: Int) {

@@ -14,18 +14,18 @@ private fun threeSum(nums: IntArray): List<List<Int>> {
         if (i > 0 && nums[i - 1] == nums[i]) {
             continue
         }
-        var j = i + 1
-        var k = nums.lastIndex
-        while (j < k) {
-            val sum = nums[i] + nums[j] + nums[k]
+        var left = i + 1
+        var right = nums.lastIndex
+        while (left < right) {
+            val sum = nums[i] + nums[left] + nums[right]
             if (sum == 0) {
-                result.add(listOf(nums[i], nums[j], nums[k]))
-                k--
-                while (j < k && nums[k+1] == nums[k]) k--
+                result.add(listOf(nums[i], nums[left], nums[right]))
+                right--
+                while (left < right && nums[right+1] == nums[right]) right--
             }
-            while (j < k && nums[j] == nums[k]) k--
-            if (sum > 0) k--
-            else j++
+            while (left < right && nums[left] == nums[right]) right--
+            if (sum > 0) right--
+            else left++
         }
     }
     return result
