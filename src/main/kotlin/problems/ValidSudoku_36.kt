@@ -22,55 +22,36 @@ fun main() {
     )
 
 }
-
 private fun isValidSudoku(board: Array<CharArray>): Boolean {
-    val isValid3 = Array(9) { BooleanArray(9) }
-    for (i in 0..8) {
-        for (j in 0..8) {
-            if (j % 3 == 0 && i % 3 == 0) {
-                if (!isValid3x3(board, i, j)) {
+    val sudo = Array(9){BooleanArray(9)}
+    for(i in 0 until 9){
+        for(j in 0 until 9){
+            if(board[i][j]=='.') continue
+            if(i%3==0&&j%3==0){
+                if(!check3x3(board,i,j)) {
                     return false
                 }
             }
-            val c = board[i][j]
-            if (c == '.') continue
-            val number = (c - '0') - 1
-            if (number !in 0..8) {
+            val n = board[i][j]-'1'
+            if(sudo[i][n]) {
                 return false
             }
-            if (isValid3[i][number]) {
-                return false
-            }
-            isValid3[i][number] = true
-
-            for (k in 1..8) {
-                if (k == i) continue
-                val char = board[k][j]
-                if (char == '.') continue
-                val num = (char - '0') - 1
-                if (num == number) {
-                    return false
-                }
+            sudo[i][n] = true
+            for(r in 0 until 9){
+                if(r!=i&&board[r][j]!='.'&&board[r][j]==board[i][j])return false
             }
         }
     }
     return true
 }
-
-private fun isValid3x3(board: Array<CharArray>, x: Int, y: Int): Boolean {
-    val isValid3 = Array(3) { BooleanArray(3) }
-    for (i in 0 until 3) {
-        for (j in 0 until 3) {
-            val c = board[x + i][y + j]
-            if (c == '.') continue
-            val number = (c - '0') - 1
-            if (number !in 0..8) {
-                return false
-            }
-            if (isValid3[number / 3][number % 3]) {
-                return false
-            }
-            isValid3[number / 3][number % 3] = true
+fun check3x3(board:Array<CharArray>,i:Int,j:Int):Boolean{
+    val ar = BooleanArray(9)
+    for(l in 0 until 3){
+        for(t in 0 until 3){
+            if(board[i+l][j+t]=='.') continue
+            val n = board[i+l][j+t]-'1'
+            if(ar[n]) return false
+            ar[n] = true
         }
     }
     return true
